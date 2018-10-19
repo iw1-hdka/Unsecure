@@ -1,0 +1,42 @@
+version: '2'
+services:
+    php:
+        build: ./docker/php-fpm
+        volumes:
+            - ./:/var/www/symfony
+            - ./docker/php-fpm/php.ini:/usr/local/etc/php/php.ini
+        depends_on:
+            - db
+        links:
+            - db:mysqldb
+    
+    web:
+        image: nginx:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./:/var/www/symfony
+            - ./docker/nginx/symfony.conf:/etc/nginx/conf.d/symfony.conf
+        depends_on:
+            - php
+    
+    db:
+        image: mysql:5.7
+        container_name: db
+        restart: always
+        environment:
+            MYSQL_DATABASE: symfony
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        links:
+            - db
