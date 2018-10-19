@@ -23,7 +23,7 @@ class Session
 
     /**
      * Session data encoded as json
-     * 
+     *
      * @var string
      *
      * @ORM\Column(name="data", type="string", length=4095)
@@ -41,7 +41,7 @@ class Session
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -52,7 +52,7 @@ class Session
      * Set data
      *
      * @param string $data
-     * 
+     *
      * @return Session
      */
     public function setData($data)
@@ -65,7 +65,7 @@ class Session
     /**
      * Get data
      *
-     * @return string 
+     * @return string
      */
     public function getData()
     {

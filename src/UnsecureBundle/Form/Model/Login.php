@@ -24,7 +24,7 @@ class Login
 
     /**
      * @param string $login
-     * 
+     *
      * @return self
      */
     public function setLogin($login)
@@ -44,7 +44,7 @@ class Login
 
     /**
      * @param string $pwd
-     * 
+     *
      * @return self
      */
     public function setPwd($pwd)

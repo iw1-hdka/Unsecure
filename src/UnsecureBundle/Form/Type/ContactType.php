@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class ContactType extends AbstractType
 {
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('email', 'email', array(
@@ -31,5 +30,4 @@ class ContactType extends AbstractType
     {
         return 'unsecureBundle_contacttype';
     }
-
 }

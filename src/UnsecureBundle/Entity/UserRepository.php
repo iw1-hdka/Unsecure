@@ -36,10 +36,10 @@ class UserRepository extends EntityRepository
     
     /**
      * Query to check user password
-     * 
+     *
      * @param string $username
      * @param string $hashedPassword
-     * 
+     *
      * @return User
      */
     public function loginQuery($username, $hashedPassword)

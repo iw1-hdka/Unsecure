@@ -40,7 +40,7 @@ class SessionService
     
     /**
      * Constructor
-     * 
+     *
      * @param RequestStack $requestStack
      * @param SessionRepository $sessionRepository
      * @param UserRepository $userRepository
@@ -85,7 +85,7 @@ class SessionService
     /**
      * Persist session data into database,
      * and send cookie on kernel response
-     * 
+     *
      * @param FilterResponseEvent $event
      */
     public function onKernelResponse(FilterResponseEvent $event)
@@ -109,7 +109,7 @@ class SessionService
     
     /**
      * @param array $data
-     * 
+     *
      * @return \stdClass
      */
     public function setData(\stdClass $data)
@@ -143,7 +143,7 @@ class SessionService
     
     /**
      * Create default session data
-     * 
+     *
      * @return \stdClass
      */
     private static function createDefaultSessionData()
