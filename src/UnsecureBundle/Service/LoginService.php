@@ -23,12 +23,12 @@ class LoginService
     /**
      * Try to login with given credentials.
      * Return logged user or null if invalid credentials.
-     * 
+     *
      * @param string $username
      * @param string $plainPassword
-     * 
+     *
      * @return User
-     * 
+     *
      * @throws LoginException
      */
     public function login($username, $plainPassword)
@@ -52,7 +52,7 @@ class LoginService
     
     /**
      * @param string $plainPassword
-     * 
+     *
      * @return string
      */
     private static function hash($plainPassword)

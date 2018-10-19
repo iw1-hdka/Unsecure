@@ -7,23 +7,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ArticleController extends Controller
 {
-
     public function indexAction(Request $request)
     {
         $fileName = $request->get('fileName');
         $article = null;
 
-        if ($fileName != null)
-        {
-            try
-            {
+        if ($fileName != null) {
+            try {
                 $handle = fopen('../src/UnsecureBundle/Resources/article/yesYouCan/' . $fileName, 'r');
 
                 $article = stream_get_contents($handle);
                 fclose($handle);
-            }
-            catch (\Exception $e)
-            {
+            } catch (\Exception $e) {
                 $article = 'Open file fail';
             }
         }
@@ -32,5 +27,4 @@ class ArticleController extends Controller
                     'article' => $article
         ));
     }
-
 }

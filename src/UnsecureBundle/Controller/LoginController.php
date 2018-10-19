@@ -25,7 +25,6 @@ class LoginController extends Controller
         $loginForm->handleRequest($request);
         
         if ($loginForm->isValid()) {
-            
             $user = $loginService->login($login->getLogin(), $login->getPwd());
             
             $sessionData = $sessionService->getData();

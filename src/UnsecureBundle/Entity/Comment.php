@@ -21,7 +21,7 @@ class Comment
      */
     private $id;
 
-    /** 
+    /**
      * @ORM\ManyToOne(targetEntity="UnsecureBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
@@ -58,7 +58,7 @@ class Comment
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -81,7 +81,7 @@ class Comment
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -104,7 +104,7 @@ class Comment
     /**
      * Get subjectId
      *
-     * @return integer 
+     * @return integer
      */
     public function getSubjectId()
     {
@@ -127,7 +127,7 @@ class Comment
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -150,7 +150,7 @@ class Comment
     /**
      * Get creationDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -173,7 +173,7 @@ class Comment
     /**
      * Get user
      *
-     * @return \UnsecureBundle\Entity\User 
+     * @return \UnsecureBundle\Entity\User
      */
     public function getUser()
     {
@@ -196,7 +196,7 @@ class Comment
     /**
      * Get subject
      *
-     * @return \UnsecureBundle\Entity\Subject 
+     * @return \UnsecureBundle\Entity\Subject
      */
     public function getSubject()
     {

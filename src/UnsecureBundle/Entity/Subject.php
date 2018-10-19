@@ -23,19 +23,19 @@ class Subject
 
     /**
      * @var User
-     * 
+     *
      * @ORM\ManyToOne(targetEntity="UnsecureBundle\Entity\User", inversedBy="subjects")
      * @ORM\JoinColumn(name="user", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $user;
 
-     /** 
-     * @var Comments[]
-     * 
-     * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="subject")
-     * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
-     * @ORM\OrderBy({"creationDate" = "DESC"})
-     */
+    /**
+    * @var Comments[]
+    *
+    * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="subject")
+    * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+    * @ORM\OrderBy({"creationDate" = "DESC"})
+    */
     private $comments;
     
     /**
@@ -68,7 +68,7 @@ class Subject
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -91,7 +91,7 @@ class Subject
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -114,7 +114,7 @@ class Subject
     /**
      * Get creationDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -137,7 +137,7 @@ class Subject
     /**
      * Get user
      *
-     * @return User 
+     * @return User
      */
     public function getUser()
     {
@@ -199,7 +199,7 @@ class Subject
     /**
      * Get comments
      *
-     * @return Comments[] 
+     * @return Comments[]
      */
     public function getComments()
     {

@@ -14,7 +14,7 @@ class SessionRepository extends EntityRepository
 {
     /**
      * Persist and flush a session instance
-     * 
+     *
      * @param Session $session
      */
     public function saveSession(Session $session)

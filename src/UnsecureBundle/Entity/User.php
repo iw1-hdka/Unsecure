@@ -23,14 +23,14 @@ class User
     
     /**
      * @var Subject[]
-     * 
+     *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Subject", mappedBy="user")
      */
     private $subjects;
     
     /**
      * @var Comments[]
-     * 
+     *
      * @ORM\OneToMany(targetEntity="UnsecureBundle\Entity\Comment", mappedBy="user")
      */
     private $comments;
@@ -98,7 +98,7 @@ class User
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -108,7 +108,7 @@ class User
     /**
      * To make custom hydratation work
      *
-     * @return User 
+     * @return User
      */
     public function setId($id)
     {
@@ -133,7 +133,7 @@ class User
     /**
      * Get firstName
      *
-     * @return string 
+     * @return string
      */
     public function getFirstName()
     {
@@ -156,7 +156,7 @@ class User
     /**
      * Get lastName
      *
-     * @return string 
+     * @return string
      */
     public function getLastName()
     {
@@ -179,7 +179,7 @@ class User
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -202,7 +202,7 @@ class User
     /**
      * Get creationDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -268,7 +268,7 @@ class User
     /**
      * Get comments
      *
-     * @return return Comments[] 
+     * @return return Comments[]
      */
     public function getComments()
     {
@@ -291,7 +291,7 @@ class User
     /**
      * Get pseudo
      *
-     * @return string 
+     * @return string
      */
     public function getPseudo()
     {
@@ -314,7 +314,7 @@ class User
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -337,7 +337,7 @@ class User
     /**
      * Get admin
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getAdmin()
     {

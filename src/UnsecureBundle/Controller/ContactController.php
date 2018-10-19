@@ -8,16 +8,13 @@ use UnsecureBundle\Form\Type\ContactType;
 
 class ContactController extends Controller
 {
-
     public function indexAction(Request $request)
     {
         $contactForm = $this->createForm(new ContactType());
         $contactForm->handleRequest($request);
 
-        if ($contactForm->isSubmitted())
-        {
-            if ($contactForm->isValid())
-            {
+        if ($contactForm->isSubmitted()) {
+            if ($contactForm->isValid()) {
                 $to = 'bula@bulabula.com';
                 $subject = 'Client message';
                 $from = $contactForm->getData()['email'];
@@ -25,12 +22,9 @@ class ContactController extends Controller
 
                 $headers = "From: " . $from;
 
-                if (mail($to, $subject, $message, $headers))
-                {
+                if (mail($to, $subject, $message, $headers)) {
                     return $this->redirect($this->generateUrl('unsecure_homepage'));
-                }
-                else
-                {
+                } else {
                     throw new \Exception('send mail fail');
                 }
             }
@@ -40,5 +34,4 @@ class ContactController extends Controller
                     'contactForm' => $contactForm->createView()
         ));
     }
-
 }

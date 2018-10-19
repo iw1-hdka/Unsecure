@@ -11,7 +11,6 @@ use UnsecureBundle\Form\Type\CommentType;
 
 class IndexController extends Controller
 {
-
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -28,16 +27,13 @@ class IndexController extends Controller
         $sessionService = $this->get('unsecure.session');
 
         // Display form create a new subject if already logged
-        if (-1 !== $sessionService->getData()->userId)
-        {
+        if (-1 !== $sessionService->getData()->userId) {
             $user = $this->get('unsecure.repository.user')->getById($sessionService->getData()->userId);
             $subjectForm = $this->createForm(new SubjectType());
             $subjectForm->handleRequest($request);
 
-            if ($subjectForm->isSubmitted())
-            {
-                if ($subjectForm->isValid())
-                {     
+            if ($subjectForm->isSubmitted()) {
+                if ($subjectForm->isValid()) {
                     $subject = new Subject();
                     $subject->setText($subjectForm->getData()['text']);
                     $subject->setUser($user);
@@ -67,7 +63,7 @@ class IndexController extends Controller
     /**
      * @param Request $request
      * @param int $subjectId
-     * 
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function subjectAction(Request $request, $subjectId)
